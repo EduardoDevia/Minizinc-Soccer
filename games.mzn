@@ -9,7 +9,7 @@ array[GameNumber] of float: probability;
 %array to validate what the bets should be taken
 array[GameNumber] of var bool : bet; 
 %Constraints the average of the bet is greater than 23%
-constraint sum(i in GameNumber)(probability[i]*bet[i])/sum(i in GameNumber)(bet[i])>=0.23;
+constraint sum(i in GameNumber)(probability[i]*bet[i])/sum(i in GameNumber)(bet[i])<=0.23;
 %Constraints to select more than five bet
 constraint sum(i in GameNumber)(bet[i])>minbets;
 
